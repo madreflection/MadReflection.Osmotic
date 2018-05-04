@@ -1,0 +1,3 @@
+[submodule "submodules/MadReflection.Shared"]
+	path = submodules/MadReflection.Shared
+	url = https://github.com/madreflection/MadReflection.Shared
