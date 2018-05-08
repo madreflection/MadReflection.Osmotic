@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
+  <metadata>
+    <id>MadReflection.Osmotic</id>
+    <version>0.0.0</version>
+    <title>Osmotic</title>
+    <authors>Benn Benson</authors>
+    <owners>Benn Benson</owners>
+    <summary>Converts to/from strings between layers.</summary>
+    <description>Osmotic handles conversion to/from string between layers. Parsers and formatters can be customized for the specifics of each pair of layers.</description>
+    <!--<releaseNotes></releaseNotes>-->
+    <language>en-us</language>
+    <projectUrl>https://github.com/bennbenson/MadReflection.Osmotic</projectUrl>
+    <!--<iconUrl></iconUrl>-->
+    <licenseUrl>https://github.com/bennbenson/MadReflection.Osmotic/blob/master/LICENSE.md</licenseUrl>
+    <copyright>Copyright (c) 2017-2018 Benn Benson</copyright>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <dependencies>
+      <group targetFramework="netstandard2.0"></group>
+      <group targetFramework="netstandard1.3">
+        <dependency id="System.ComponentModel.TypeConverter" version="4.1.0"/>
+        <dependency id="System.Reflection.Extensions" version="4.3.0"/>
+        <dependency id="System.Reflection.TypeExtensions" version="4.3.0"/>
+      </group>
+      <group targetFramework="net45"></group>
+      <group targetFramework="net40"></group>
+      <group targetFramework="net35"></group>
+      <group targetFramework="net40-client"></group>
+      <group targetFramework="net35-client"></group>
+    </dependencies>
+    <!--<references></references>-->
+    <!--<frameworkAssemblies></frameworkAssemblies>-->
+    <tags>parse format</tags>
+  </metadata>
+  <files>
+    <file src="..\bin\Release\netstandard2.0\MadReflection.Osmotic.dll" target="lib\netstandard2.0"/>
+    <file src="..\bin\Release\netstandard2.0\MadReflection.Osmotic.xml" target="lib\netstandard2.0"/>
+    <file src="..\bin\Release\netstandard1.3\MadReflection.Osmotic.dll" target="lib\netstandard1.3"/>
+    <file src="..\bin\Release\netstandard1.3\MadReflection.Osmotic.xml" target="lib\netstandard1.3"/>
+    <file src="..\bin\Release\net45\MadReflection.Osmotic.dll" target="lib\net45"/>
+    <file src="..\bin\Release\net45\MadReflection.Osmotic.xml" target="lib\net45"/>
+    <file src="..\bin\Release\net40\MadReflection.Osmotic.dll" target="lib\net40"/>
+    <file src="..\bin\Release\net40\MadReflection.Osmotic.xml" target="lib\net40"/>
+    <file src="..\bin\Release\net35\MadReflection.Osmotic.dll" target="lib\net35"/>
+    <file src="..\bin\Release\net35\MadReflection.Osmotic.xml" target="lib\net35"/>
+    <file src="..\bin\Release\net40-client\MadReflection.Osmotic.dll" target="lib\net40-client"/>
+    <file src="..\bin\Release\net40-client\MadReflection.Osmotic.xml" target="lib\net40-client"/>
+    <file src="..\bin\Release\net35-client\MadReflection.Osmotic.dll" target="lib\net35-client"/>
+    <file src="..\bin\Release\net35-client\MadReflection.Osmotic.xml" target="lib\net35-client"/>
+  </files>
+</package>
