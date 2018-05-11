@@ -20,8 +20,6 @@ By convention, the parser uses the static `Parse` and `TryParse` methods provide
 Install-Package MadReflection.Osmotic
 ```
 
-*Note: The package is not yet on NuGet.  This command will work once it's been published.*
-
 ### Expose Osmotic To Your Application
 
 Osmotic requires an instance in order to be used.  A parser or formatter with the default configuration can be found in the static `Default` property.  To create a configured instance, call the static `Create` method.

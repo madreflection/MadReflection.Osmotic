@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>MadReflection.Osmotic</id>
-    <version>0.0.0</version>
+    <version>0.0.1</version>
     <title>Osmotic</title>
     <authors>Benn Benson</authors>
     <owners>Benn Benson</owners>
@@ -10,9 +10,9 @@
     <description>Osmotic handles conversion to/from string between layers. Parsers and formatters can be customized for the specifics of each pair of layers.</description>
     <!--<releaseNotes></releaseNotes>-->
     <language>en-us</language>
-    <projectUrl>https://github.com/bennbenson/MadReflection.Osmotic</projectUrl>
+    <projectUrl>https://github.com/madreflection/MadReflection.Osmotic</projectUrl>
     <!--<iconUrl></iconUrl>-->
-    <licenseUrl>https://github.com/bennbenson/MadReflection.Osmotic/blob/master/LICENSE.md</licenseUrl>
+    <licenseUrl>https://github.com/madreflection/MadReflection.Osmotic/blob/master/LICENSE.md</licenseUrl>
     <copyright>Copyright (c) 2017-2018 Benn Benson</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
