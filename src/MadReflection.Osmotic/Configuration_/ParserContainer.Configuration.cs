@@ -172,17 +172,17 @@ namespace MadReflection.Osmotic
 			private void ThrowIfTypeNotConfigurable(Type type)
 			{
 				if (Nullable.GetUnderlyingType(type) is Type underlyingValueType)
-					throw new ArgumentException($"Cannot accept configuration for nullable of '{underlyingValueType.FullName}'.  Configure '{underlyingValueType.FullName}' instead.");
+					throw new OsmoticConfigurationException($"Cannot accept configuration for nullable of '{underlyingValueType.FullName}'.  Configure '{underlyingValueType.FullName}' instead.");
 
 #pragma warning disable IDE0008 // Use explicit type: Declared type differs by framework/version so 'var' is necessary.
 				var typeInfo = type.GetTypeInfo();
 #pragma warning restore IDE0008 // Use explicit type
 
 				if (typeInfo.IsInterface)
-					throw new ArgumentException($"Cannot accept configuration for '{type.FullName}' because interfaces are not supported.");
+					throw new OsmoticConfigurationException($"Cannot accept configuration for '{type.FullName}' because interfaces are not supported.");
 
 				if (typeInfo.IsSubclassOf(typeof(Delegate)))
-					throw new ArgumentException($"Cannot accept configuration for '{type.FullName}' because delegates are not supported.");
+					throw new OsmoticConfigurationException($"Cannot accept configuration for '{type.FullName}' because delegates are not supported.");
 			}
 
 			private void ThrowIfAnyTypesConfigured()
