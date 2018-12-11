@@ -1,13 +1,18 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;netstandard1.3;net45;net40;net35;net40-client;net35-client</TargetFrameworks>
     <RootNamespace>MadReflection.Osmotic</RootNamespace>
     <AssemblyName>MadReflection.Osmotic</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)' == 'Release' And Exists('$(ProjectDir)..\Shared\MadReflection.snk')">
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>$(ProjectDir)..\Shared\MadReflection.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+
+  <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\Common.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\Common.props')" />
   <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\ClientTargets.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\ClientTargets.props')" />
   <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\MultiTargetConstants.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\MultiTargetConstants.props')" />
   <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\DocumentationFile.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\DocumentationFile.props')" />
