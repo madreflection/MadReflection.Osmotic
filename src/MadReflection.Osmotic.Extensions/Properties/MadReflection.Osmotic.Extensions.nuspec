@@ -12,7 +12,7 @@
     <language>en-us</language>
     <projectUrl>https://github.com/bennbenson/MadReflection.Osmotic</projectUrl>
     <!--<iconUrl></iconUrl>-->
-    <licenseUrl>https://github.com/bennbenson/MadReflection.Osmotic/blob/master/LICENSE.md</licenseUrl>
+    <license type="expression">BSD-3-Clause</license>
     <copyright>Copyright (c) 2017-2018 Benn Benson</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
