@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd">
   <metadata>
     <id>MadReflection.Osmotic.Extensions</id>
-    <version>0.0.1</version>
+    <version>0.1.0</version>
     <title>Osmotic</title>
     <authors>Benn Benson</authors>
     <owners>Benn Benson</owners>
@@ -13,32 +13,32 @@
     <projectUrl>https://github.com/bennbenson/MadReflection.Osmotic</projectUrl>
     <!--<iconUrl></iconUrl>-->
     <license type="expression">BSD-3-Clause</license>
-    <copyright>Copyright (c) 2017-2018 Benn Benson</copyright>
+    <copyright>Copyright (c) 2017-2019 Benn Benson</copyright>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <dependencies>
       <group targetFramework="netstandard2.0">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="netstandard1.3">
         <dependency id="System.ComponentModel.TypeConverter" version="4.1.0"/>
         <dependency id="System.Reflection.Extensions" version="4.3.0"/>
         <dependency id="System.Reflection.TypeExtensions" version="4.3.0"/>
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="net45">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="net40">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="net35">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="net40-client">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
       <group targetFramework="net35-client">
-        <dependency id="MadReflection.Osmotic" version="0.0.1"/>
+        <dependency id="MadReflection.Osmotic" version="0.1.0"/>
       </group>
     </dependencies>
     <!--<references></references>-->
