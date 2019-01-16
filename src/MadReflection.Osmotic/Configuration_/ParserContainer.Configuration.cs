@@ -95,7 +95,7 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (parseFunc == null)
+				if (parseFunc is null)
 					throw new ArgumentNullException(nameof(parseFunc));
 				if (missingTryParse < MissingTryParseHandling.ThrowNotSupportedException || missingTryParse > MissingTryParseHandling.WrapParseInTryCatch)
 					throw new ArgumentOutOfRangeException(nameof(missingTryParse), "Invalid MissingTryParseHandling value.");
@@ -112,9 +112,9 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (parseFunc == null)
+				if (parseFunc is null)
 					throw new ArgumentNullException(nameof(parseFunc));
-				if (tryParseFunc == null)
+				if (tryParseFunc is null)
 					throw new ArgumentNullException(nameof(tryParseFunc));
 
 				Type type = typeof(T);
@@ -129,7 +129,7 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (parserObject == null)
+				if (parserObject is null)
 					throw new ArgumentNullException(nameof(parserObject));
 
 				Type type = typeof(T);
@@ -150,7 +150,7 @@ namespace MadReflection.Osmotic
 				ThrowIfTypeAlreadyConfigured(type);
 
 				TypeConverter converter = TypeDescriptor.GetConverter(type);
-				if (converter == null)
+				if (converter is null)
 					throw new OsmoticConfigurationException("The type does not have a type converter.");
 
 				if (!converter.CanConvertFrom(typeof(string)))

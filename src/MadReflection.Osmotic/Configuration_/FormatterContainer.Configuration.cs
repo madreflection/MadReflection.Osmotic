@@ -70,7 +70,7 @@ namespace MadReflection.Osmotic
 				{
 					ThrowIfLocked();
 
-					if (value == null)
+					if (value is null)
 						throw new ArgumentNullException(nameof(value));
 
 					ThrowIfAnyTypesConfigured();
@@ -104,7 +104,7 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (formatFunc == null)
+				if (formatFunc is null)
 					throw new ArgumentNullException(nameof(formatFunc));
 				if (missingFormatSpecific < MissingFormatSpecificHandling.ThrowNotSupportedException || missingFormatSpecific > MissingFormatSpecificHandling.UseToString)
 					throw new ArgumentOutOfRangeException(nameof(missingFormatSpecific), "Invalid MissingFormatSpecificHandling value.");
@@ -121,9 +121,9 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (formatFunc == null)
+				if (formatFunc is null)
 					throw new ArgumentNullException(nameof(formatFunc));
-				if (formatSpecificFunc == null)
+				if (formatSpecificFunc is null)
 					throw new ArgumentNullException(nameof(formatSpecificFunc));
 
 				Type type = typeof(T);
@@ -138,7 +138,7 @@ namespace MadReflection.Osmotic
 			{
 				ThrowIfLocked();
 
-				if (formatterObject == null)
+				if (formatterObject is null)
 					throw new ArgumentNullException(nameof(formatterObject));
 
 				Type type = typeof(T);
@@ -159,8 +159,8 @@ namespace MadReflection.Osmotic
 				ThrowIfTypeAlreadyConfigured(type);
 
 				TypeConverter converter = TypeDescriptor.GetConverter(type);
-				if (converter == null)
-					throw new InvalidOperationException("");
+				if (converter is null)
+					throw new InvalidOperationException($"A type converter is not available for '{type.Name}'.");
 
 				if (!converter.CanConvertTo(typeof(string)))
 					throw new InvalidOperationException("The type converter does not support conversion to string.");

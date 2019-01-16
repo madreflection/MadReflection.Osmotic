@@ -11,7 +11,7 @@ namespace MadReflection.Osmotic
 
 		protected override string InternalFormat(object value)
 		{
-			if (value == null)
+			if (value is null)
 				throw new ArgumentNullException(nameof(value));
 
 			return base.InternalFormat(value);
@@ -19,7 +19,7 @@ namespace MadReflection.Osmotic
 
 		protected override string InternalFormat(object value, string format)
 		{
-			if (value == null)
+			if (value is null)
 				throw new ArgumentNullException(nameof(value));
 
 			return base.InternalFormat(value, format);

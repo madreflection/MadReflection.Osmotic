@@ -24,7 +24,7 @@ namespace MadReflection.Osmotic.Extensions
 		/// </remarks>
 		public static T ParseDefault<T>(this IParser<T> parser, string s, T defaultValue)
 		{
-			if (parser == null)
+			if (parser is null)
 				throw new ArgumentNullException(nameof(parser));
 
 			if (parser.TryParse(s, out object result))
@@ -50,9 +50,9 @@ namespace MadReflection.Osmotic.Extensions
 		/// </remarks>
 		public static T ParseDefault<T>(this IParser<T> parser, string s, Func<T> defaultFactory)
 		{
-			if (parser == null)
+			if (parser is null)
 				throw new ArgumentNullException(nameof(parser));
-			if (defaultFactory == null)
+			if (defaultFactory is null)
 				throw new ArgumentNullException(nameof(defaultFactory));
 
 			if (parser.TryParse(s, out object result))
@@ -79,7 +79,7 @@ namespace MadReflection.Osmotic.Extensions
 		/// </remarks>
 		public static bool TryParseDefault<T>(this IParser<T> parser, string s, T defaultValue, out T result)
 		{
-			if (parser == null)
+			if (parser is null)
 				throw new ArgumentNullException(nameof(parser));
 
 			if (parser.TryParse(s, out result))
@@ -107,9 +107,9 @@ namespace MadReflection.Osmotic.Extensions
 		/// </remarks>
 		public static bool TryParseDefault<T>(this IParser<T> parser, string s, Func<T> defaultFactory, out T result)
 		{
-			if (parser == null)
+			if (parser is null)
 				throw new ArgumentNullException(nameof(parser));
-			if (defaultFactory == null)
+			if (defaultFactory is null)
 				throw new ArgumentNullException(nameof(defaultFactory));
 
 			if (parser.TryParse(s, out result))

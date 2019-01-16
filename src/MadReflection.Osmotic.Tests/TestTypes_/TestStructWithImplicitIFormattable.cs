@@ -9,7 +9,7 @@ namespace MadReflection.Osmotic.Tests
 
 		public TestStructWithImplicitIFormattable(string value)
 		{
-			if (value == null)
+			if (value is null)
 				throw new ArgumentNullException(nameof(value));
 			if (value == "")
 				throw new ArgumentException("Empty string is valid for this purpose.");
@@ -23,7 +23,7 @@ namespace MadReflection.Osmotic.Tests
 
 		public static TestStructWithImplicitIFormattable Parse(string s)
 		{
-			if (s == null)
+			if (s is null)
 				throw new ArgumentNullException(nameof(s));
 			if (s.Length == 0)
 				throw new ArgumentException("Invalid input.");

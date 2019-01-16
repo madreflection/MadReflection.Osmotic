@@ -35,7 +35,7 @@ namespace MadReflection.Osmotic
 		/// <returns>A new <see cref="ParserContainer"/> instance.</returns>
 		public static ParserContainer Create(ParserConfigurator configurator)
 		{
-			if (configurator == null)
+			if (configurator is null)
 				throw new ArgumentNullException(nameof(configurator));
 
 			ParserContainer container = new ParserContainer();
@@ -57,7 +57,7 @@ namespace MadReflection.Osmotic
 		/// <returns>An <see cref="IParser"/> reference to a parsing object for type <paramref name="type"/> that also implements <see cref="IParser{T}"/> where 'T' is <paramref name="type"/>.</returns>
 		public IParser For(Type type)
 		{
-			if (type == null)
+			if (type is null)
 				throw new ArgumentNullException(nameof(type));
 
 			return ForInternal(type);
@@ -114,7 +114,7 @@ namespace MadReflection.Osmotic
 
 			ParseFunc<T?> parseFunc = s =>
 			{
-				if (s == null)
+				if (s is null)
 				{
 					if (_nullableValueTypesParseNullToNull)
 						return null;
@@ -130,7 +130,7 @@ namespace MadReflection.Osmotic
 
 			TryParseFunc<T?> tryParseFunc = (string s, out T? result) =>
 			{
-				if (s == null)
+				if (s is null)
 				{
 					if (_nullableValueTypesParseNullToNull)
 					{
@@ -254,13 +254,13 @@ namespace MadReflection.Osmotic
 		private IParser<T> ApplyOptionsAndGetValueTypeParserObject<T>(ParseFunc<T> parseFunc, TryParseFunc<T> tryParseFunc, MissingTryParseHandling missingTryParse)
 			where T : struct
 		{
-			if (parseFunc == null)
+			if (parseFunc is null)
 				return new FunctorParserObject<T>(ParseThrowsNotSupportedException<T>, TryParseThrowsNotSupportedException);
 
 			ParseFunc<T> valueTypeParseFunc = parseFunc;  // Just keeping with the pattern.
 			TryParseFunc<T> valueTypeTryParseFunc = tryParseFunc;
 
-			if (tryParseFunc == null)
+			if (tryParseFunc is null)
 			{
 				if (missingTryParse == MissingTryParseHandling.WrapParseInTryCatch)
 					valueTypeTryParseFunc = CreateWrapperForTryParse(valueTypeParseFunc);
@@ -276,7 +276,7 @@ namespace MadReflection.Osmotic
 		private IParser<T> ApplyOptionsAndGetReferenceTypeParserObject<T>(ParseFunc<T> parseFunc, TryParseFunc<T> tryParseFunc, MissingTryParseHandling missingTryParse)
 			where T : class
 		{
-			if (parseFunc == null)
+			if (parseFunc is null)
 				return new FunctorParserObject<T>(ParseThrowsNotSupportedException<T>, TryParseThrowsNotSupportedException);
 
 			ParseFunc<T> referenceTypeParseFunc = parseFunc;
@@ -286,14 +286,14 @@ namespace MadReflection.Osmotic
 			{
 				referenceTypeParseFunc = s =>
 				{
-					if (s == null)
+					if (s is null)
 						return null;
 
 					return parseFunc(s);
 				};
 			}
 
-			if (tryParseFunc == null)
+			if (tryParseFunc is null)
 			{
 				if (missingTryParse == MissingTryParseHandling.WrapParseInTryCatch)
 					referenceTypeTryParseFunc = CreateWrapperForTryParse(referenceTypeParseFunc);
@@ -308,7 +308,7 @@ namespace MadReflection.Osmotic
 				{
 					referenceTypeTryParseFunc = (string s, out T result) =>
 					{
-						if (s == null)
+						if (s is null)
 						{
 							result = null;
 							return true;
@@ -336,7 +336,7 @@ namespace MadReflection.Osmotic
 				select m
 				).SingleOrDefault();
 
-			if (method == null)
+			if (method is null)
 				return null;
 
 			return method.CreateDelegate<ParseFunc<T>>();
@@ -357,7 +357,7 @@ namespace MadReflection.Osmotic
 				select m
 				).SingleOrDefault();
 
-			if (method == null)
+			if (method is null)
 				return null;
 
 			return method.CreateDelegate<TryParseFunc<T>>();

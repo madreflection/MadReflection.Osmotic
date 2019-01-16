@@ -35,7 +35,7 @@ namespace MadReflection.Osmotic
 		/// <returns>A new <see cref="FormatterContainer"/> instance.</returns>
 		public static FormatterContainer Create(FormatterConfigurator configurator)
 		{
-			if (configurator == null)
+			if (configurator is null)
 				throw new ArgumentNullException(nameof(configurator));
 
 			FormatterContainer container = new FormatterContainer();
@@ -57,7 +57,7 @@ namespace MadReflection.Osmotic
 		/// <returns>An <see cref="IFormatter"/> reference to a formatting object for type <paramref name="type"/> that also implements <see cref="IFormatter{T}"/> where 'T' is <paramref name="type"/>.</returns>
 		public IFormatter For(Type type)
 		{
-			if (type == null)
+			if (type is null)
 				throw new ArgumentNullException(nameof(type));
 
 			return ForInternal(type);
@@ -134,12 +134,6 @@ namespace MadReflection.Osmotic
 		private IFormatter<T> GetValueTypeFormatterObject<T>()
 			where T : struct
 		{
-			//Type type = typeof(T);
-
-			// Enums don't need to be handled differently.
-			//if (type.GetTypeInfo().IsEnum)
-			//	return GetEnumTypeFormatterObject<T>();
-
 			FormatFunc<T> formatFunc = GetDefaultValueTypeFormatFunc<T>();
 			FormatSpecificFunc<T> formatSpecificFunc = GetDefaultValueTypeFormatSpecificFunc<T>();
 
@@ -176,7 +170,7 @@ namespace MadReflection.Osmotic
 
 			// formatFunc will never be null because ToString() is always available.
 
-			if (formatSpecificFunc == null)
+			if (formatSpecificFunc is null)
 			{
 				if (_missingFormatSpecific == MissingFormatSpecificHandling.ThrowNotSupportedException)
 					valueTypeFormatSpecificFunc = FormatSpecificThrowsNotSupportedException;
@@ -197,10 +191,11 @@ namespace MadReflection.Osmotic
 			FormatSpecificFunc<T> referenceTypeFormatSpecificFunc = formatSpecificFunc;
 
 			// formatFunc will never be null because ToString() is always available.
+
 			if (_referenceTypesFormatNullToNull)
 				referenceTypeFormatFunc = value => value != null ? formatFunc(value) : null;
 
-			if (formatSpecificFunc == null)
+			if (formatSpecificFunc is null)
 			{
 				if (missingFormatSpecific == MissingFormatSpecificHandling.UseToString)
 					referenceTypeFormatSpecificFunc = (value, format) => referenceTypeFormatFunc(value);
@@ -268,7 +263,7 @@ namespace MadReflection.Osmotic
 		{
 			return value =>
 			{
-				if (value == null)
+				if (value is null)
 					throw new ArgumentNullException(nameof(value));
 
 				return value.ToString();
@@ -284,7 +279,7 @@ namespace MadReflection.Osmotic
 			{
 				return (value, format) =>
 				{
-					if (value == null)
+					if (value is null)
 						throw new ArgumentNullException(nameof(value));
 
 					return ((IFormattable)value).ToString(format, _defaultCultureInfo);
@@ -308,7 +303,7 @@ namespace MadReflection.Osmotic
 
 				return (value, format) =>
 				{
-					if (value == null)
+					if (value is null)
 						throw new ArgumentNullException(nameof(value));
 
 					return publicIFormattableToStringFunc(value, format, _defaultCultureInfo);
@@ -331,7 +326,7 @@ namespace MadReflection.Osmotic
 
 				return (value, format) =>
 				{
-					if (value == null)
+					if (value is null)
 						throw new ArgumentNullException(nameof(value));
 
 					return solitaryToStringFunc(value, format);

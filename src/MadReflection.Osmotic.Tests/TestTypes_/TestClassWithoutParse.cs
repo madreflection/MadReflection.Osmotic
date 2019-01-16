@@ -9,7 +9,7 @@ namespace MadReflection.Osmotic.Tests
 
 		public TestClassWithoutParse(string value)
 		{
-			if (value == null)
+			if (value is null)
 				throw new ArgumentNullException(nameof(value));
 			if (value == "")
 				throw new ArgumentException("Empty string is invalid for this purpose.");

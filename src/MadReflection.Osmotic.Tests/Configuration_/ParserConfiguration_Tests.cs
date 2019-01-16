@@ -88,7 +88,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
@@ -106,7 +106,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
@@ -124,7 +124,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
@@ -144,7 +144,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
@@ -164,7 +164,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
@@ -184,7 +184,7 @@ namespace MadReflection.Osmotic.Tests
 			};
 
 			// Assert
-			Assert.That(test, Throws.ArgumentException);
+			Assert.That(test, Throws.InstanceOf<OsmoticConfigurationException>());
 		}
 
 		[TestCase]
