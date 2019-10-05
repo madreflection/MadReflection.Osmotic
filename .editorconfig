@@ -12,8 +12,26 @@ end_of_line = crlf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
+[*.sln]
+charset = utf-8-bom
+indent_style = tab
+indent_size = 3
+tab_width = 3
+
+[*.{*proj,vcxproj.filters,props,targets}]
+charset = utf-8-bom
+indent_style = space
+indent_size = 2
+tab_width = 2
+
 [*.txt]
 indent_style = tab
+
+[*.md]
+indent_style = space
+indent_size = 4
+tab_width = 4
+trim_trailing_whitespace = false
 
 [*.{cs,vb}]
 dotnet_style_qualification_for_field = false:suggestion
@@ -37,9 +55,11 @@ dotnet_style_prefer_auto_properties = true:none
 dotnet_style_prefer_is_null_check_over_reference_equality_method = true:suggestion
 dotnet_style_prefer_conditional_expression_over_assignment = true:none
 dotnet_style_prefer_conditional_expression_over_return = true:none
+#dotnet_style_prefer_compound_assignment = true:suggestion
 dotnet_style_coalesce_expression = true:suggestion
 dotnet_style_null_propagation = true:suggestion
 dotnet_sort_system_directives_first = true
+#dotnet_code_quality_unused_parameters = all:none
 
 [*.cs]
 charset = utf-8-bom
@@ -57,6 +77,8 @@ csharp_style_expression_bodied_operators = true:none
 csharp_style_expression_bodied_properties = true:none
 csharp_style_expression_bodied_indexers = true:none
 csharp_style_expression_bodied_accessors = true:none
+#csharp_style_expression_bodied_lambdas = true:silent
+#csharp_style_expression_bodied_local_functions = false:silent
 csharp_style_pattern_matching_over_is_with_cast_check = true:suggestion
 csharp_style_pattern_matching_over_as_with_null_check = true:suggestion
 csharp_style_inlined_variable_declaration = true:suggestion
@@ -96,13 +118,7 @@ indent_style = space
 indent_size = 4
 tab_width = 4
 
-visual_basic_preferred_modifier_order = Public,Private,Protected,Friend,Shared,Static,Shadows,Overridable,MustOverride,NotOverridable,Overloads,Overrides,MustInherit,NotInheritable,Default,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion
-
-[*.{*proj,vcxproj.filters,props,targets}]
-charset = utf-8-bom
-indent_style = space
-indent_size = 2
-tab_width = 2
+visual_basic_preferred_modifier_order = Partial,Public,Private,Protected,Friend,Shared,Static,Shadows,Overridable,MustOverride,NotOverridable,Overloads,Overrides,MustInherit,NotInheritable,Default,ReadOnly,WriteOnly,Dim,Const,WithEvents,Widening,Narrowing,Custom,Async:suggestion
 
 [*.{xml,resx}]
 indent_style = space
@@ -118,9 +134,3 @@ tab_width = 2
 indent_style = tab
 indent_size = 3
 tab_width = 3
-
-[*.md]
-indent_style = space
-indent_size = 4
-tab_width = 4
-trim_trailing_whitespace = false
