@@ -17,8 +17,6 @@
   <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\MultiTargetConstants.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\MultiTargetConstants.props')" />
   <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\build\DocumentationFile.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\build\DocumentationFile.props')" />
 
-  <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\src\Shim.NewReflection.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\src\Shim.NewReflection.props')" />
-
   <ItemGroup Condition="'$(TargetFramework)' == 'netstandard1.3'">
     <PackageReference Include="System.ComponentModel.TypeConverter" Version="4.1.0" />
     <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
@@ -26,9 +24,11 @@
     <PackageReference Include="System.Runtime.Serialization.Formatters" Version="4.3.0" />
   </ItemGroup>
 
+  <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\src\MadReflection.AssemblyInfo.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\src\MadReflection.AssemblyInfo.props')" />
+  <Import Project="$(ProjectDir)..\..\submodules\MadReflection.Shared\src\Shim.NewReflection.props" Condition="Exists('$(ProjectDir)..\..\submodules\MadReflection.Shared\src\Shim.NewReflection.props')" />
+
   <ItemGroup>
     <Compile Include="$(ProjectDir)..\Shared\CommonAssemblyInfo.cs" Link="Properties\CommonAssemblyInfo.cs" />
-    <Compile Include="$(ProjectDir)..\..\submodules\MadReflection.Shared\src\MadReflection.AssemblyInfo.cs" Link="Properties\MadReflection.AssemblyInfo.cs" />
   </ItemGroup>
 
 </Project>
