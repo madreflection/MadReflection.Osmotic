@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2017-2018, Benn Benson
+Copyright (c) 2017-2020, Benn Benson
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
