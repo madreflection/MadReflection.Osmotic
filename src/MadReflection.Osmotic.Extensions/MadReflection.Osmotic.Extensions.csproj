@@ -25,7 +25,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MadReflection.Osmotic\MadReflection.Osmotic.csproj" />
+    <ProjectReference Include="$(ProjectDir)..\MadReflection.Osmotic\MadReflection.Osmotic.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net47</TargetFrameworks><!--netcoreapp2.0;netcoreapp1.0;net45;net40;net35-->
+    <TargetFrameworks>netcoreapp2.0;net47</TargetFrameworks><!--netcoreapp2.0;netcoreapp1.0;net45;net40;net35-->
     <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <RootNamespace>MadReflection.Osmotic.Tests</RootNamespace>
     <AssemblyName>MadReflection.Osmotic.Tests</AssemblyName>
@@ -17,8 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MadReflection.Osmotic\MadReflection.Osmotic.csproj" />
-    <ProjectReference Include="..\MadReflection.Osmotic.Extensions\MadReflection.Osmotic.Extensions.csproj" />
+    <ProjectReference Include="$(ProjectDir)..\MadReflection.Osmotic\MadReflection.Osmotic.csproj" />
+    <ProjectReference Include="$(ProjectDir)..\MadReflection.Osmotic.Extensions\MadReflection.Osmotic.Extensions.csproj" />
   </ItemGroup>
 
   <Choose>
